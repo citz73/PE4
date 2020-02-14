@@ -1,12 +1,13 @@
 #include <iostream>
+#include <vector>
 
-int** createBoard() {
-    int boardsize = 3;
-    int** board_[boardsize][boardsize];
-    return board_[boardsize][boardsize];
+
+std::vector<std::vector<int>> createBoard() {
+    std::vector<std::vector<int>> board {{0,0,0}, {0,0,0}, {0,0,0}};
+    return board;
 }
 
+
 int main() {
-    int** generated = createBoard();
-    std::cout << generated << std::endl;
+    std::vector<std::vector<int>> board = createBoard();
 }
