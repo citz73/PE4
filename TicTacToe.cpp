@@ -1,11 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
 
 std::vector<std::vector<int>> createBoard() {
     std::vector<std::vector<int>> board {{0,0,0}, {0,0,0}, {0,0,0}};
     return board;
 }
+
+
 
 void DisplayBoard(std::vector<std::vector<int>> board) {
 	for (int i = 0; i < board.size(); i++) {
@@ -16,6 +19,16 @@ void DisplayBoard(std::vector<std::vector<int>> board) {
 	}
 }
 
+std::vector<int> GetPlayerChoice() {
+    int row;
+    int col;
+    std::cout << "row number:";
+    std::cin >> row;
+    std::cout << "column number:";
+    std::cin >> col;
+    std::vector<int> loc{row, col};
+    return loc;
+}
 std::vector<std::vector<int>> PlaceMarker(std::vector<std::vector<int>> board, std::vector<int> location, int marker) {
 	board[location[0]][location[1]] = marker;
 	return board;
@@ -26,4 +39,6 @@ std::vector<std::vector<int>> PlaceMarker(std::vector<std::vector<int>> board, s
 int main() {
     std::vector<std::vector<int>> board = createBoard();
     DisplayBoard(board);
+    GetPlayerChoice();
+    
 }
