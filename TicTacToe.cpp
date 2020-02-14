@@ -38,7 +38,13 @@ std::vector<std::vector<int>> PlaceMarker(std::vector<std::vector<int>> board, s
 
 int main() {
     std::vector<std::vector<int>> board = createBoard();
-    DisplayBoard(board);
-    GetPlayerChoice();
+    int turns = 9;
+    std::vector<int> player {1,2};
+    while(turns != 0) {
+        std::vector<int> choice_picked = GetPlayerChoice();
+        board = PlaceMarker(board, choice_picked, player[turns%2]);
+        DisplayBoard(board);
+        turns--;
+    }
     
 }
